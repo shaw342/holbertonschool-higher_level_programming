@@ -1,12 +1,9 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """define  class"""
 
 
 class MyList(list):
     """MyList """
-
-    def __init__(self):
-        super().__init__()
-
     def print_sorted(self):
+        """ function """
         print(sorted(self))
