@@ -1,5 +1,5 @@
 #!/usr/bin/python
-"""define class"""
+"""define  class"""
 
 
 class MyList(list):
