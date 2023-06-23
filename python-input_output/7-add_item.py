@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" doc """
+""" import all module """
 import sys
 
 
@@ -8,16 +8,15 @@ load = __import__('6-load_from_json_file').load_from_json_file
 
 
 def lists(argument):
-    """ doc """
+    """ add argument"""
     try:
-        value = load("add_items.json")
+        value = load("add_item.json")
     except FileNotFoundError:
         value = []
 
-    value.extend(argument)
+    value += argument
     save(value, "add_item.json")
 
 
 argument = sys.argv[1:]
-
 lists(argument)
