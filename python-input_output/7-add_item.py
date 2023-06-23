@@ -8,7 +8,7 @@ save = __import__('5-save_to_json_file').save_to_json_file
 
 
 def lists(argument):
-    """doc"""
+    """ doc """
     try:
         value = load("add_items.json")
     except FileNotFoundError:
