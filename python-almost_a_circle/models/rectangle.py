@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+"""define class Rectangle"""
+
 
 class Rectangle(Base):
+    """rectangle"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         self.width = width
@@ -14,7 +17,7 @@ class Rectangle(Base):
         return self.__width
 
     @width.setter
-    def width(self,value):
+    def width(self, value):
         if type(value) is not int:
             raise TypeError("width must be integer")
         if value < 0:
@@ -26,7 +29,7 @@ class Rectangle(Base):
         return self.__height
 
     @height.setter
-    def height(self,value):
+    def height(self, value):
         if type(value) is not int:
             raise TypeError("height must be an integers")
         if value <= 0:
@@ -38,7 +41,7 @@ class Rectangle(Base):
         return self.__x
     
     @x.setter
-    def x(self,value):
+    def x(self, value):
         if type(value) is not int:
             raise TypeError("x must be an integers")
         if value <= 0:
@@ -49,7 +52,7 @@ class Rectangle(Base):
         return self.__y
     
     @y.setter
-    def y(self,value):
+    def y(self, value):
         if type(value) is not int:
             raise TypeError("y must be an integers")
         if value <= 0:
