@@ -86,6 +86,7 @@ class Rectangle(Base):
             print(" " * self.__x + "#" * self.__width)
 
     def update(self, *args, **kwargs):
+        """ update """
         for key, value in kwargs.items():
             setattr(self, key, value)
 
