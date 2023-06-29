@@ -107,3 +107,14 @@ class Rectangle(Base):
                 f"[Rectangle] ({self.id}) "
                 f"{self.x}/{self.y } - {self.width}/{self.height}").strip()
         return m
+
+    def to_dictionary(self):
+        """ dictionary """
+        a = {
+                "x": self.x,
+                "y": self.y,
+                "id": self.id,
+                "width": self.width,
+                "height": self.height
+            }
+        return a
