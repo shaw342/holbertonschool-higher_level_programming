@@ -1,44 +1,62 @@
 #!/usr/bin/python3
-"""define Square"""
+""" square """
+
+
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """classe square"""
+    """ square """
+
     def __init__(self, size, x=0, y=0, id=None):
-        self.size = size
         super().__init__(size, size, x, y, id)
+        self.size = size
 
     def __str__(self):
-        """str"""
-        a = (f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}")
-        return a
+        r = ''
+        r += '[Square] '
+        r += '(%s) ' % (self.id)
+        r += '%s/%s' % (self.x, self.y)
+        r += ' - '
+        r += '%s' % (self.width)
+        return r
 
     @property
     def size(self):
-        """size"""
         return self.width
 
     @size.setter
     def size(self, value):
-        """size setter"""
         self.width = value
-        self.height = value
 
     def update(self, *args, **kwargs):
         """ update """
-        for key, value in kwargs.items():
-            setattr(self, key, value)
-
-        if len(args) >= 1:
-            self.id = args[0]
-        if len(args) >= 2:
-            self.size = args[1]
-        if len(args) >= 3:
-            self.x = args[2]
-        if len(args) >= 4:
-            self.y = args[3]
+        if args:
+            for i, v in enumerate(args):
+                if i == 0:
+                    self.id = v
+                if i == 1:
+                    self.size = v
+                if i == 2:
+                    self.x = v
+                if i == 3:
+                    self.y = v
+        else:
+            for k, v in kwargs.items():
+                if k == 'id':
+                    self.id = v
+                if k == 'size':
+                    self.size = v
+                if k == 'x':
+                    self.x = v
+                if k == 'y':
+                    self.y = v
 
     def to_dictionary(self):
-        """ dictionary """
-        return {"id": self.id, "x": self.x, "size": self.size, "y": self.y}
+        """ to dictionary """
+        return {
+            'id': self.id,
+            'size': self.size,
+            'x': self.x,
+            'y': self.y,
+        }
