@@ -12,6 +12,6 @@ if __name__ == "__main__":
         cursor.execute("select * from states order by states.id")
         my_list = cursor.fetchall()
         for x in my_list:
-            if x[1] == "Nevada" or x[1] == "New York":
+            if x[1][0] == "N":
                 print(x)
     conn.close()
