@@ -6,6 +6,10 @@
 from sqlalchemy import Column, Integer, String, create_engine, ForeignKey
 from sqlalchemy import Sequence
 from model_state import Base
+from sqlalchemy.ext.declarative import declarative_base
+
+
+Base = declarative_base()
 
 
 class City(Base):
