@@ -15,8 +15,8 @@ if __name__ == "__main__":
                            .format(username, password, database))
     Session = sessionmaker(bind=engine)
     session = Session()
-    States = session.query(State).filter
-    (State.name.contains('a')).all()
+    States = session.query(State).filter(
+        State.name.contains('a')).all()
     for state in States:
-        print(f"{state.id}: {state.name}")
+        print("{}: {}".format(state.id, state.name))
     session.close()
