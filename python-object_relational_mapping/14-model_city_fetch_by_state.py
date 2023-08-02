@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """Prints all City objects from the database hbtn_0e_14_usa"""
+
 from model_city import Base, City
 from model_state import Base, State
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-
 
 if __name__ == "__main__":
     username = sys.argv[1]
