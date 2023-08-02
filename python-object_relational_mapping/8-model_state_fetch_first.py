@@ -15,11 +15,9 @@ if __name__ == "__main__":
                            .format(username, password, database))
     Session = sessionmaker(bind=engine)
     session = Session()
-    States = session.query(State).where(State.id == 1).all()
-    
+    States = session.query(State).order_by(State.id).first()
     if States:
-        for state in States:
-            print("{}: {}".format(state.id, state.name))
+        print("{}: {}".format(States.id, States.name))
     else:
         print("Nothing")
     session.close()
